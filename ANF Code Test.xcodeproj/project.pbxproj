@@ -17,6 +17,8 @@
 		3E727F03267281F7006C11AC /* ANFExploreCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */; };
 		D647ACDE2D487FC900A49831 /* PromotionCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACDD2D487FC900A49831 /* PromotionCardViewController.swift */; };
 		D647ACE12D48814E00A49831 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACE02D48814700A49831 /* ViewCode.swift */; };
+		D647ACE52D48875700A49831 /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACE42D48874B00A49831 /* Explore.swift */; };
+		D647ACE72D48881700A49831 /* PromoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACE62D48880700A49831 /* PromoContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCardTableViewController.swift; sourceTree = "<group>"; };
 		D647ACDD2D487FC900A49831 /* PromotionCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCardViewController.swift; sourceTree = "<group>"; };
 		D647ACE02D48814700A49831 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		D647ACE42D48874B00A49831 /* Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
+		D647ACE62D48880700A49831 /* PromoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +89,8 @@
 		3E727ED126727088006C11AC /* ANF Code Test */ = {
 			isa = PBXGroup;
 			children = (
-				D647ACE02D48814700A49831 /* ViewCode.swift */,
+				D647ACE32D4886E600A49831 /* Architecture */,
+				D647ACE22D4886BC00A49831 /* Models */,
 				3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */,
 				3E727ED226727088006C11AC /* AppDelegate.swift */,
 				3E727ED426727088006C11AC /* SceneDelegate.swift */,
@@ -106,6 +111,23 @@
 				3E727EEB2672708B006C11AC /* Info.plist */,
 			);
 			path = "ANF Code TestTests";
+			sourceTree = "<group>";
+		};
+		D647ACE22D4886BC00A49831 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D647ACE62D48880700A49831 /* PromoContent.swift */,
+				D647ACE42D48874B00A49831 /* Explore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D647ACE32D4886E600A49831 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				D647ACE02D48814700A49831 /* ViewCode.swift */,
+			);
+			path = Architecture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +236,8 @@
 				3E727F03267281F7006C11AC /* ANFExploreCardTableViewController.swift in Sources */,
 				3E727ED326727088006C11AC /* AppDelegate.swift in Sources */,
 				3E727ED526727088006C11AC /* SceneDelegate.swift in Sources */,
+				D647ACE52D48875700A49831 /* Explore.swift in Sources */,
+				D647ACE72D48881700A49831 /* PromoContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
