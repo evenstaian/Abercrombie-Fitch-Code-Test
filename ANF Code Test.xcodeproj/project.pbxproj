@@ -10,7 +10,7 @@
 		3E4AB93A2676D86100C79456 /* exploreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E4AB9392676D86100C79456 /* exploreData.json */; };
 		3E727ED326727088006C11AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E727ED226727088006C11AC /* AppDelegate.swift */; };
 		3E727ED526727088006C11AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E727ED426727088006C11AC /* SceneDelegate.swift */; };
-		3E727EDA26727088006C11AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E727ED826727088006C11AC /* Main.storyboard */; };
+		3E727EDA26727088006C11AC /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E727ED826727088006C11AC /* Explore.storyboard */; };
 		3E727EDC2672708B006C11AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E727EDB2672708B006C11AC /* Assets.xcassets */; };
 		3E727EDF2672708B006C11AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E727EDD2672708B006C11AC /* LaunchScreen.storyboard */; };
 		3E727EEA2672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E727EE92672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift */; };
@@ -22,6 +22,7 @@
 		D647ACED2D488B2700A49831 /* PromotionCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACEC2D488B1100A49831 /* PromotionCardViewModel.swift */; };
 		D647ACEF2D488BC400A49831 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACEE2D488BB600A49831 /* ExploreViewModel.swift */; };
 		D647ACF12D488C2A00A49831 /* PromotionCardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACF02D488C2200A49831 /* PromotionCardFactory.swift */; };
+		D647ACF32D4891EC00A49831 /* ExploreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACF22D4891E600A49831 /* ExploreFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		3E727ECF26727088006C11AC /* ANF Code Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ANF Code Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E727ED226727088006C11AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E727ED426727088006C11AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3E727ED926727088006C11AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3E727ED926727088006C11AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Explore.storyboard; sourceTree = "<group>"; };
 		3E727EDB2672708B006C11AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E727EDE2672708B006C11AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E727EE02672708B006C11AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		D647ACEC2D488B1100A49831 /* PromotionCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCardViewModel.swift; sourceTree = "<group>"; };
 		D647ACEE2D488BB600A49831 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		D647ACF02D488C2200A49831 /* PromotionCardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCardFactory.swift; sourceTree = "<group>"; };
+		D647ACF22D4891E600A49831 /* ExploreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +97,11 @@
 		3E727ED126727088006C11AC /* ANF Code Test */ = {
 			isa = PBXGroup;
 			children = (
+				D647ACF42D489D2A00A49831 /* Application */,
 				D647ACE92D488A8C00A49831 /* Scenes */,
 				D647ACE32D4886E600A49831 /* Architecture */,
 				D647ACE22D4886BC00A49831 /* Models */,
-				3E727ED226727088006C11AC /* AppDelegate.swift */,
-				3E727ED426727088006C11AC /* SceneDelegate.swift */,
-				3E727ED826727088006C11AC /* Main.storyboard */,
+				3E727ED826727088006C11AC /* Explore.storyboard */,
 				3E727EDB2672708B006C11AC /* Assets.xcassets */,
 				3E727EDD2672708B006C11AC /* LaunchScreen.storyboard */,
 				3E727EE02672708B006C11AC /* Info.plist */,
@@ -147,6 +148,7 @@
 		D647ACEA2D488A9D00A49831 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				D647ACF22D4891E600A49831 /* ExploreFactory.swift */,
 				D647ACEE2D488BB600A49831 /* ExploreViewModel.swift */,
 				3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */,
 			);
@@ -161,6 +163,15 @@
 				D647ACDD2D487FC900A49831 /* PromotionCardViewController.swift */,
 			);
 			path = PromotionCard;
+			sourceTree = "<group>";
+		};
+		D647ACF42D489D2A00A49831 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3E727ED226727088006C11AC /* AppDelegate.swift */,
+				3E727ED426727088006C11AC /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +256,7 @@
 			files = (
 				3E727EDF2672708B006C11AC /* LaunchScreen.storyboard in Resources */,
 				3E727EDC2672708B006C11AC /* Assets.xcassets in Resources */,
-				3E727EDA26727088006C11AC /* Main.storyboard in Resources */,
+				3E727EDA26727088006C11AC /* Explore.storyboard in Resources */,
 				3E4AB93A2676D86100C79456 /* exploreData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +282,7 @@
 				3E727ED326727088006C11AC /* AppDelegate.swift in Sources */,
 				D647ACED2D488B2700A49831 /* PromotionCardViewModel.swift in Sources */,
 				3E727ED526727088006C11AC /* SceneDelegate.swift in Sources */,
+				D647ACF32D4891EC00A49831 /* ExploreFactory.swift in Sources */,
 				D647ACEF2D488BC400A49831 /* ExploreViewModel.swift in Sources */,
 				D647ACE52D48875700A49831 /* Explore.swift in Sources */,
 				D647ACE72D48881700A49831 /* PromoContent.swift in Sources */,
@@ -296,12 +308,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3E727ED826727088006C11AC /* Main.storyboard */ = {
+		3E727ED826727088006C11AC /* Explore.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3E727ED926727088006C11AC /* Base */,
 			);
-			name = Main.storyboard;
+			name = Explore.storyboard;
 			sourceTree = "<group>";
 		};
 		3E727EDD2672708B006C11AC /* LaunchScreen.storyboard */ = {

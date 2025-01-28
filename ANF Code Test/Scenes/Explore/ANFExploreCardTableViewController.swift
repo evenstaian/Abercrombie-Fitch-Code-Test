@@ -6,14 +6,20 @@
 import UIKit
 
 class ANFExploreCardTableViewController: UITableViewController {
-
-    private var exploreData: [Explore]? {
-        if let filePath = Bundle.main.path(forResource: "exploreData", ofType: "json"),
-           let fileContent = try? Data(contentsOf: URL(fileURLWithPath: filePath)) {
-            return try? JSONDecoder().decode([Explore].self, from: fileContent)
+    
+    var viewModel: ExploreViewmodeling?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel?.updateData = { [weak self] exploreData in
+            self?.exploreData = exploreData
+            self?.tableView.reloadData()
         }
-        return nil
+        viewModel?.viewDidLoad()
     }
+
+    private var exploreData: [Explore]?
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         exploreData?.count ?? 0
