@@ -23,6 +23,11 @@
 		D647ACEF2D488BC400A49831 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACEE2D488BB600A49831 /* ExploreViewModel.swift */; };
 		D647ACF12D488C2A00A49831 /* PromotionCardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACF02D488C2200A49831 /* PromotionCardFactory.swift */; };
 		D647ACF32D4891EC00A49831 /* ExploreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACF22D4891E600A49831 /* ExploreFactory.swift */; };
+		D647ACFA2D4973DF00A49831 /* APIRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACF92D4973D900A49831 /* APIRequesting.swift */; };
+		D647ACFC2D49746100A49831 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACFB2D49745B00A49831 /* NetworkErrors.swift */; };
+		D647ACFE2D4974CD00A49831 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACFD2D4974C200A49831 /* ApiConstants.swift */; };
+		D647AD002D49753100A49831 /* MockApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACFF2D49752A00A49831 /* MockApiRequests.swift */; };
+		D647AD022D49769B00A49831 /* ApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD012D49769600A49831 /* ApiRequests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,11 @@
 		D647ACEE2D488BB600A49831 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		D647ACF02D488C2200A49831 /* PromotionCardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCardFactory.swift; sourceTree = "<group>"; };
 		D647ACF22D4891E600A49831 /* ExploreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreFactory.swift; sourceTree = "<group>"; };
+		D647ACF92D4973D900A49831 /* APIRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequesting.swift; sourceTree = "<group>"; };
+		D647ACFB2D49745B00A49831 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		D647ACFD2D4974C200A49831 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		D647ACFF2D49752A00A49831 /* MockApiRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiRequests.swift; sourceTree = "<group>"; };
+		D647AD012D49769600A49831 /* ApiRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,7 @@
 		3E727ED126727088006C11AC /* ANF Code Test */ = {
 			isa = PBXGroup;
 			children = (
+				D647ACF52D49738800A49831 /* Network */,
 				D647ACF42D489D2A00A49831 /* Application */,
 				D647ACE92D488A8C00A49831 /* Scenes */,
 				D647ACE32D4886E600A49831 /* Architecture */,
@@ -172,6 +183,42 @@
 				3E727ED426727088006C11AC /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		D647ACF52D49738800A49831 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D647ACF82D4973C300A49831 /* Enums */,
+				D647ACF72D4973AD00A49831 /* API */,
+				D647ACF62D49739D00A49831 /* Abstractions */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D647ACF62D49739D00A49831 /* Abstractions */ = {
+			isa = PBXGroup;
+			children = (
+				D647ACF92D4973D900A49831 /* APIRequesting.swift */,
+			);
+			path = Abstractions;
+			sourceTree = "<group>";
+		};
+		D647ACF72D4973AD00A49831 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D647AD012D49769600A49831 /* ApiRequests.swift */,
+				D647ACFF2D49752A00A49831 /* MockApiRequests.swift */,
+				D647ACFD2D4974C200A49831 /* ApiConstants.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D647ACF82D4973C300A49831 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				D647ACFB2D49745B00A49831 /* NetworkErrors.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +322,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D647ACFE2D4974CD00A49831 /* ApiConstants.swift in Sources */,
+				D647AD002D49753100A49831 /* MockApiRequests.swift in Sources */,
+				D647AD022D49769B00A49831 /* ApiRequests.swift in Sources */,
 				D647ACDE2D487FC900A49831 /* PromotionCardViewController.swift in Sources */,
 				D647ACE12D48814E00A49831 /* ViewCode.swift in Sources */,
 				D647ACF12D488C2A00A49831 /* PromotionCardFactory.swift in Sources */,
@@ -282,6 +332,8 @@
 				3E727ED326727088006C11AC /* AppDelegate.swift in Sources */,
 				D647ACED2D488B2700A49831 /* PromotionCardViewModel.swift in Sources */,
 				3E727ED526727088006C11AC /* SceneDelegate.swift in Sources */,
+				D647ACFA2D4973DF00A49831 /* APIRequesting.swift in Sources */,
+				D647ACFC2D49746100A49831 /* NetworkErrors.swift in Sources */,
 				D647ACF32D4891EC00A49831 /* ExploreFactory.swift in Sources */,
 				D647ACEF2D488BC400A49831 /* ExploreViewModel.swift in Sources */,
 				D647ACE52D48875700A49831 /* Explore.swift in Sources */,
