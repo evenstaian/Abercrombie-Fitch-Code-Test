@@ -19,6 +19,9 @@
 		D647ACE12D48814E00A49831 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACE02D48814700A49831 /* ViewCode.swift */; };
 		D647ACE52D48875700A49831 /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACE42D48874B00A49831 /* Explore.swift */; };
 		D647ACE72D48881700A49831 /* PromoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACE62D48880700A49831 /* PromoContent.swift */; };
+		D647ACED2D488B2700A49831 /* PromotionCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACEC2D488B1100A49831 /* PromotionCardViewModel.swift */; };
+		D647ACEF2D488BC400A49831 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACEE2D488BB600A49831 /* ExploreViewModel.swift */; };
+		D647ACF12D488C2A00A49831 /* PromotionCardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACF02D488C2200A49831 /* PromotionCardFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		D647ACE02D48814700A49831 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		D647ACE42D48874B00A49831 /* Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
 		D647ACE62D48880700A49831 /* PromoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoContent.swift; sourceTree = "<group>"; };
+		D647ACEC2D488B1100A49831 /* PromotionCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCardViewModel.swift; sourceTree = "<group>"; };
+		D647ACEE2D488BB600A49831 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		D647ACF02D488C2200A49831 /* PromotionCardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCardFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +95,9 @@
 		3E727ED126727088006C11AC /* ANF Code Test */ = {
 			isa = PBXGroup;
 			children = (
+				D647ACE92D488A8C00A49831 /* Scenes */,
 				D647ACE32D4886E600A49831 /* Architecture */,
 				D647ACE22D4886BC00A49831 /* Models */,
-				3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */,
 				3E727ED226727088006C11AC /* AppDelegate.swift */,
 				3E727ED426727088006C11AC /* SceneDelegate.swift */,
 				3E727ED826727088006C11AC /* Main.storyboard */,
@@ -99,7 +105,6 @@
 				3E727EDD2672708B006C11AC /* LaunchScreen.storyboard */,
 				3E727EE02672708B006C11AC /* Info.plist */,
 				3E4AB9392676D86100C79456 /* exploreData.json */,
-				D647ACDD2D487FC900A49831 /* PromotionCardViewController.swift */,
 			);
 			path = "ANF Code Test";
 			sourceTree = "<group>";
@@ -128,6 +133,34 @@
 				D647ACE02D48814700A49831 /* ViewCode.swift */,
 			);
 			path = Architecture;
+			sourceTree = "<group>";
+		};
+		D647ACE92D488A8C00A49831 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D647ACEB2D488AA700A49831 /* PromotionCard */,
+				D647ACEA2D488A9D00A49831 /* Explore */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D647ACEA2D488A9D00A49831 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				D647ACEE2D488BB600A49831 /* ExploreViewModel.swift */,
+				3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		D647ACEB2D488AA700A49831 /* PromotionCard */ = {
+			isa = PBXGroup;
+			children = (
+				D647ACF02D488C2200A49831 /* PromotionCardFactory.swift */,
+				D647ACEC2D488B1100A49831 /* PromotionCardViewModel.swift */,
+				D647ACDD2D487FC900A49831 /* PromotionCardViewController.swift */,
+			);
+			path = PromotionCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,9 +266,12 @@
 			files = (
 				D647ACDE2D487FC900A49831 /* PromotionCardViewController.swift in Sources */,
 				D647ACE12D48814E00A49831 /* ViewCode.swift in Sources */,
+				D647ACF12D488C2A00A49831 /* PromotionCardFactory.swift in Sources */,
 				3E727F03267281F7006C11AC /* ANFExploreCardTableViewController.swift in Sources */,
 				3E727ED326727088006C11AC /* AppDelegate.swift in Sources */,
+				D647ACED2D488B2700A49831 /* PromotionCardViewModel.swift in Sources */,
 				3E727ED526727088006C11AC /* SceneDelegate.swift in Sources */,
+				D647ACEF2D488BC400A49831 /* ExploreViewModel.swift in Sources */,
 				D647ACE52D48875700A49831 /* Explore.swift in Sources */,
 				D647ACE72D48881700A49831 /* PromoContent.swift in Sources */,
 			);

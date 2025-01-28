@@ -41,7 +41,7 @@ class ANFExploreCardTableViewController: UITableViewController {
         
         guard let data = exploreData?[indexPath.row] else { return }
         
-        let promotionVC = PromotionCardViewController()
+        let promotionVC = PromotionCardFactory.makeModule() as! PromotionCardViewController
         promotionVC.configure(with: data)
         promotionVC.modalPresentationStyle = .fullScreen
         present(promotionVC, animated: true)
