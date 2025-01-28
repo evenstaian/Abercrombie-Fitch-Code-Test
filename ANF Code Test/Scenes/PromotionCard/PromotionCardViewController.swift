@@ -25,7 +25,7 @@ class PromotionCardViewController: UIViewController {
     
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -74,6 +74,8 @@ class PromotionCardViewController: UIViewController {
         return stackView
     }()
     
+    private var imageAspectConstraint: NSLayoutConstraint?
+    
     init(viewModel: PromotionCardViewmodeling){
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -114,11 +116,11 @@ extension PromotionCardViewController: ViewCode {
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
             
             backgroundImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             backgroundImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -149,13 +151,24 @@ extension PromotionCardViewController: ViewCode {
 }
 
 extension PromotionCardViewController {
+    private func updateImageAspectRatio(for image: UIImage) {
+        imageAspectConstraint?.isActive = false
+        
+        let aspectRatio = image.size.height / image.size.width
+        imageAspectConstraint = backgroundImageView.heightAnchor.constraint(equalTo: backgroundImageView.widthAnchor, multiplier: aspectRatio)
+        imageAspectConstraint?.isActive = true
+    }
+    
     func configure(with data: Explore) {
         titleLabel.text = data.title
         topDescriptionLabel.text = data.topDescription
         promoMessageLabel.text = data.promoMessage
         bottomDescriptionLabel.text = data.bottomDescription
         
-        backgroundImageView.image = UIImage(named: data.backgroundImage)
+        if let image = UIImage(named: data.backgroundImage) {
+            backgroundImageView.image = image
+            updateImageAspectRatio(for: image)
+        }
         
         if let content = data.content {
             content.forEach { item in

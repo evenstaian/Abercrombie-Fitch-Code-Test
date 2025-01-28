@@ -43,7 +43,6 @@ class ANFExploreCardTableViewController: UITableViewController {
         
         let promotionVC = PromotionCardFactory.makeModule() as! PromotionCardViewController
         promotionVC.configure(with: data)
-        promotionVC.modalPresentationStyle = .fullScreen
-        present(promotionVC, animated: true)
+        navigationController?.pushViewController(promotionVC, animated: true)
     }
 }
