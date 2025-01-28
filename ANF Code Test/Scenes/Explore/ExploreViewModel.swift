@@ -9,23 +9,44 @@ import Foundation
 
 protocol ExploreViewmodeling {
     var updateData: (([Explore]) -> Void)? { get set }
+    var onRequestError: ((String) -> Void)? { get set }
     func viewDidLoad()
 }
 
 class ExploreViewModel: ExploreViewmodeling {
+    
+    private let service: ExploreServicing
+    
+    var exploreData: [Explore] = []
     var updateData: (([Explore]) -> Void)?
+    var onRequestError: ((String) -> Void)?
+    
+    init(service: ExploreServicing){
+        self.service = service
+    }
     
     func viewDidLoad() {
         getExploreData()
     }
     
     func getExploreData() {
-        if let filePath = Bundle.main.path(forResource: "exploreData", ofType: "json"),
-           let fileContent = try? Data(contentsOf: URL(fileURLWithPath: filePath)) {
-            let exploreData: [Explore]? = try? JSONDecoder().decode([Explore].self, from: fileContent)
-            
-            if let exploreData = exploreData {
-                self.updateData?(exploreData)
+        service.getExploreData { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.exploreData.append(contentsOf: response)
+                if let exploreData = self?.exploreData {
+                    self?.updateData?(exploreData)
+                }
+            case .failure(let error):
+                switch error {
+                case .noConnection:
+                    self?.onRequestError?("No internet connection. Please check your network and try again.")
+                case .notFound:
+                    self?.onRequestError?("Explore data not found. Please try again later.")
+                default:
+                    self?.onRequestError?("An unexpected error occurred. Please try again later.")
+                }
+                print("Error fetching exploreData: \(error)")
             }
         }
     }

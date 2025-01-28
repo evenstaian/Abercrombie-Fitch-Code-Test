@@ -28,6 +28,7 @@
 		D647ACFE2D4974CD00A49831 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACFD2D4974C200A49831 /* ApiConstants.swift */; };
 		D647AD002D49753100A49831 /* MockApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACFF2D49752A00A49831 /* MockApiRequests.swift */; };
 		D647AD022D49769B00A49831 /* ApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD012D49769600A49831 /* ApiRequests.swift */; };
+		D647AD042D49798500A49831 /* ExploreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD032D49797F00A49831 /* ExploreService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		D647ACFD2D4974C200A49831 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		D647ACFF2D49752A00A49831 /* MockApiRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiRequests.swift; sourceTree = "<group>"; };
 		D647AD012D49769600A49831 /* ApiRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequests.swift; sourceTree = "<group>"; };
+		D647AD032D49797F00A49831 /* ExploreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		D647ACEA2D488A9D00A49831 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				D647AD032D49797F00A49831 /* ExploreService.swift */,
 				D647ACF22D4891E600A49831 /* ExploreFactory.swift */,
 				D647ACEE2D488BB600A49831 /* ExploreViewModel.swift */,
 				3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */,
@@ -325,6 +328,7 @@
 				D647ACFE2D4974CD00A49831 /* ApiConstants.swift in Sources */,
 				D647AD002D49753100A49831 /* MockApiRequests.swift in Sources */,
 				D647AD022D49769B00A49831 /* ApiRequests.swift in Sources */,
+				D647AD042D49798500A49831 /* ExploreService.swift in Sources */,
 				D647ACDE2D487FC900A49831 /* PromotionCardViewController.swift in Sources */,
 				D647ACE12D48814E00A49831 /* ViewCode.swift in Sources */,
 				D647ACF12D488C2A00A49831 /* PromotionCardFactory.swift in Sources */,

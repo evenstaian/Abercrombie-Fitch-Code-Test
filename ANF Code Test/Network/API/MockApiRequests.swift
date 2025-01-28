@@ -9,14 +9,15 @@ import Foundation
 
 class MockApiRequests: APIRequesting {
     func getExploreData(completion: @escaping (Result<[Explore], NetworkErrors>) -> Void) {
-        if let filePath = Bundle.main.path(forResource: "exploreData", ofType: "json"){
-            generateJSONDataCompletion(jsonString: filePath, completion: completion)
+        if let filePath = Bundle.main.path(forResource: "exploreData", ofType: "json"),
+           let jsonData = try? Data(contentsOf: URL(fileURLWithPath: filePath)) {
+            generateJSONDataCompletion(jsonData: jsonData, completion: completion)
+        } else {
+            completion(.failure(.unknown))
         }
     }
     
-    private func generateJSONDataCompletion<T: Decodable>(jsonString: String, completion: @escaping (Result<T, NetworkErrors>) -> Void) {
-        let jsonData = jsonString.data(using: .utf8)!
-        
+    private func generateJSONDataCompletion<T: Decodable>(jsonData: Data, completion: @escaping (Result<T, NetworkErrors>) -> Void) {
         do {
             let response = try JSONDecoder().decode(T.self, from: jsonData)
             completion(.success(response))
