@@ -7,11 +7,10 @@ import UIKit
 
 class ANFExploreCardTableViewController: UITableViewController {
 
-    private var exploreData: [[AnyHashable: Any]]? {
+    private var exploreData: [Explore]? {
         if let filePath = Bundle.main.path(forResource: "exploreData", ofType: "json"),
-         let fileContent = try? Data(contentsOf: URL(fileURLWithPath: filePath)),
-         let jsonDictionary = try? JSONSerialization.jsonObject(with: fileContent, options: .mutableContainers) as? [[AnyHashable: Any]] {
-            return jsonDictionary
+           let fileContent = try? Data(contentsOf: URL(fileURLWithPath: filePath)) {
+            return try? JSONDecoder().decode([Explore].self, from: fileContent)
         }
         return nil
     }
@@ -24,14 +23,12 @@ class ANFExploreCardTableViewController: UITableViewController {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "exploreContentCell", for: indexPath)
         
         if let data = exploreData?[indexPath.row] {
-            if let titleLabel = cell.viewWithTag(1) as? UILabel,
-               let titleText = data["title"] as? String {
-                titleLabel.text = titleText
+            if let titleLabel = cell.viewWithTag(1) as? UILabel {
+                titleLabel.text = data.title
             }
             
             if let imageView = cell.viewWithTag(2) as? UIImageView,
-               let name = data["backgroundImage"] as? String,
-               let image = UIImage(named: name) {
+               let image = UIImage(named: data.backgroundImage) {
                 imageView.image = image
             }
         }

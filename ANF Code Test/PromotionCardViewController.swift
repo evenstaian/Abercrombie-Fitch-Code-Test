@@ -136,21 +136,19 @@ extension PromotionCardViewController: ViewCode {
 }
 
 extension PromotionCardViewController {
-    func configure(with data: [AnyHashable: Any]) {
-        titleLabel.text = data["title"] as? String
-        topDescriptionLabel.text = data["topDescription"] as? String
-        promoMessageLabel.text = data["promoMessage"] as? String
-        bottomDescriptionLabel.text = data["bottomDescription"] as? String
+    func configure(with data: Explore) {
+        titleLabel.text = data.title
+        topDescriptionLabel.text = data.topDescription
+        promoMessageLabel.text = data.promoMessage
+        bottomDescriptionLabel.text = data.bottomDescription
         
-        if let imageName = data["backgroundImage"] as? String {
-            backgroundImageView.image = UIImage(named: imageName)
-        }
+        backgroundImageView.image = UIImage(named: data.backgroundImage)
         
-        if let content = data["content"] as? [[AnyHashable: Any]] {
+        if let content = data.content {
             content.forEach { item in
                 let button = UIButton(type: .system)
                 button.titleLabel?.font = .systemFont(ofSize: 15)
-                button.setTitle(item["title"] as? String, for: .normal)
+                button.setTitle(item.title, for: .normal)
                 button.setTitleColor(.black, for: .normal)
                 button.backgroundColor = .white
                 button.layer.borderWidth = 1
@@ -158,8 +156,7 @@ extension PromotionCardViewController {
                 button.layer.cornerRadius = 0
                 button.translatesAutoresizingMaskIntoConstraints = false
                 
-                if let target = item["target"] as? String,
-                   let url = URL(string: target) {
+                if let url = URL(string: item.target) {
                     button.tag = buttonsStackView.arrangedSubviews.count
                     button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 }
