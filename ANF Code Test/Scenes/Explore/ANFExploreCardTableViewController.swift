@@ -4,10 +4,13 @@
 //
 
 import UIKit
+import Combine
 
 class ANFExploreCardTableViewController: UITableViewController {
     
     var viewModel: ExploreViewmodeling?
+    
+    private var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,13 @@ class ANFExploreCardTableViewController: UITableViewController {
             self?.tableView.reloadData()
         }
         viewModel?.viewDidLoad()
+        
+        NotificationCenter.default
+            .publisher(for: UIScene.willEnterForegroundNotification)
+            .sink { [weak self] _ in
+                self?.viewModel?.viewDidLoad()
+            }
+            .store(in: &cancellables)
     }
 
     private var exploreData: [Explore]?
