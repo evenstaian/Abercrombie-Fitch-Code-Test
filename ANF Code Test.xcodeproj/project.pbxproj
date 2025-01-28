@@ -113,16 +113,14 @@
 		3E727ED126727088006C11AC /* ANF Code Test */ = {
 			isa = PBXGroup;
 			children = (
+				D647AD0A2D498ADA00A49831 /* UIResources */,
 				D647ACF52D49738800A49831 /* Network */,
 				D647ACF42D489D2A00A49831 /* Application */,
 				D647ACE92D488A8C00A49831 /* Scenes */,
 				D647ACE32D4886E600A49831 /* Architecture */,
 				D647ACE22D4886BC00A49831 /* Models */,
-				3E727ED826727088006C11AC /* Explore.storyboard */,
-				3E727EDB2672708B006C11AC /* Assets.xcassets */,
-				3E727EDD2672708B006C11AC /* LaunchScreen.storyboard */,
-				3E727EE02672708B006C11AC /* Info.plist */,
 				3E4AB9392676D86100C79456 /* exploreData.json */,
+				3E727EE02672708B006C11AC /* Info.plist */,
 			);
 			path = "ANF Code Test";
 			sourceTree = "<group>";
@@ -236,6 +234,16 @@
 				D647AD062D497FDF00A49831 /* ImageStore.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		D647AD0A2D498ADA00A49831 /* UIResources */ = {
+			isa = PBXGroup;
+			children = (
+				3E727EDD2672708B006C11AC /* LaunchScreen.storyboard */,
+				3E727ED826727088006C11AC /* Explore.storyboard */,
+				3E727EDB2672708B006C11AC /* Assets.xcassets */,
+			);
+			path = UIResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
