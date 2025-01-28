@@ -9,7 +9,7 @@ import UIKit
 
 enum PromotionCardFactory {
     static func makeModule() -> UIViewController {
-        let API = MockApiRequests()
+        let API = ApiRequests()
         let service = PromotionCardService(API: API)
         let viewModel = PromotionCardViewModel(service: service)
         let controller = PromotionCardViewController(viewModel: viewModel)

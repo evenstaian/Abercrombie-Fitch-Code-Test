@@ -14,7 +14,7 @@ enum ExploreFactory {
             fatalError("Unable to instantiate ANFExploreCardTableViewController from storyboard")
         }
         
-        let API = MockApiRequests()
+        let API = ApiRequests()
         let service = ExploreService(API: API)
         let viewModel = ExploreViewModel(service: service)
         controller.viewModel = viewModel
