@@ -89,8 +89,6 @@ class PromotionCardViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupContrainsts()
-        
-        viewModel.viewDidLoad()
     }
 }
 
@@ -165,9 +163,9 @@ extension PromotionCardViewController {
         promoMessageLabel.text = data.promoMessage
         bottomDescriptionLabel.text = data.bottomDescription
         
-        if let image = UIImage(named: data.backgroundImage) {
-            backgroundImageView.image = image
-            updateImageAspectRatio(for: image)
+        viewModel.getImage(urlString: data.backgroundImage) { [weak self] image in
+            self?.backgroundImageView.image = image
+            self?.updateImageAspectRatio(for: image)
         }
         
         if let content = data.content {
@@ -182,7 +180,7 @@ extension PromotionCardViewController {
                 button.layer.cornerRadius = 0
                 button.translatesAutoresizingMaskIntoConstraints = false
                 
-                if let url = URL(string: item.target) {
+                if URL(string: item.target) != nil {
                     button.tag = buttonsStackView.arrangedSubviews.count
                     button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 }

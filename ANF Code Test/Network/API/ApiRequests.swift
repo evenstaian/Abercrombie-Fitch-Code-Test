@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 import SystemConfiguration
 
 enum MethodsType: String {
@@ -31,6 +32,18 @@ class ApiRequests: APIRequesting {
     func getExploreData(completion: @escaping (Result<[Explore], NetworkErrors>) -> Void) {
         if let request = buildRequest(url: ApiConstants.baseURL, method: .GET) {
             buildResponse(request: request, completion: completion)
+        }
+    }
+    
+    func getImage(imageString: String, completion: @escaping (UIImage) -> Void) {
+        let imageStore = ImageStore()
+        let imageUrlString = imageString
+        if let imageUrl = URL(string: imageUrlString) {
+            imageStore.fetch(for: imageUrl) { imageData, _ in
+                if let imageData = imageData {
+                    completion(imageData)
+                }
+            }
         }
     }
 }

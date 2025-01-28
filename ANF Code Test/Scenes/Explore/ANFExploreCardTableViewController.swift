@@ -33,9 +33,10 @@ class ANFExploreCardTableViewController: UITableViewController {
                 titleLabel.text = data.title
             }
             
-            if let imageView = cell.viewWithTag(2) as? UIImageView,
-               let image = UIImage(named: data.backgroundImage) {
-                imageView.image = image
+            if let imageView = cell.viewWithTag(2) as? UIImageView {
+                viewModel?.getImage(urlString: data.backgroundImage) { image in
+                    imageView.image = image
+                }
             }
         }
         

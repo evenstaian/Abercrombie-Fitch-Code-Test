@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MockApiRequests: APIRequesting {
     func getExploreData(completion: @escaping (Result<[Explore], NetworkErrors>) -> Void) {
@@ -14,6 +15,12 @@ class MockApiRequests: APIRequesting {
             generateJSONDataCompletion(jsonData: jsonData, completion: completion)
         } else {
             completion(.failure(.unknown))
+        }
+    }
+    
+    func getImage(imageString: String, completion: @escaping (UIImage) -> Void) {
+        if let image = UIImage(named: imageString) {
+            completion(image)
         }
     }
     

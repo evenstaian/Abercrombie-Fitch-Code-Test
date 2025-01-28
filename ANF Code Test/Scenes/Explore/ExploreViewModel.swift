@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ExploreViewmodeling {
     var updateData: (([Explore]) -> Void)? { get set }
     var onRequestError: ((String) -> Void)? { get set }
     func viewDidLoad()
+    func getImage(urlString: String, completion: @escaping (UIImage) -> Void)
 }
 
 class ExploreViewModel: ExploreViewmodeling {
@@ -48,6 +50,12 @@ class ExploreViewModel: ExploreViewmodeling {
                 }
                 print("Error fetching exploreData: \(error)")
             }
+        }
+    }
+    
+    func getImage(urlString: String, completion: @escaping (UIImage) -> Void) {
+        service.getImage(url: urlString) { image in
+            completion(image)
         }
     }
 }

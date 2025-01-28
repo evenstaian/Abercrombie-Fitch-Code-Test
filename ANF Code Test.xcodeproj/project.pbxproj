@@ -29,6 +29,8 @@
 		D647AD002D49753100A49831 /* MockApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647ACFF2D49752A00A49831 /* MockApiRequests.swift */; };
 		D647AD022D49769B00A49831 /* ApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD012D49769600A49831 /* ApiRequests.swift */; };
 		D647AD042D49798500A49831 /* ExploreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD032D49797F00A49831 /* ExploreService.swift */; };
+		D647AD072D497FE500A49831 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD062D497FDF00A49831 /* ImageStore.swift */; };
+		D647AD092D4984E400A49831 /* PromotionCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD082D4984DC00A49831 /* PromotionCardService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		D647ACFF2D49752A00A49831 /* MockApiRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiRequests.swift; sourceTree = "<group>"; };
 		D647AD012D49769600A49831 /* ApiRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequests.swift; sourceTree = "<group>"; };
 		D647AD032D49797F00A49831 /* ExploreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreService.swift; sourceTree = "<group>"; };
+		D647AD062D497FDF00A49831 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		D647AD082D4984DC00A49831 /* PromotionCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCardService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,7 @@
 		D647ACEB2D488AA700A49831 /* PromotionCard */ = {
 			isa = PBXGroup;
 			children = (
+				D647AD082D4984DC00A49831 /* PromotionCardService.swift */,
 				D647ACF02D488C2200A49831 /* PromotionCardFactory.swift */,
 				D647ACEC2D488B1100A49831 /* PromotionCardViewModel.swift */,
 				D647ACDD2D487FC900A49831 /* PromotionCardViewController.swift */,
@@ -191,6 +196,7 @@
 		D647ACF52D49738800A49831 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				D647AD052D497FCB00A49831 /* Cache */,
 				D647ACF82D4973C300A49831 /* Enums */,
 				D647ACF72D4973AD00A49831 /* API */,
 				D647ACF62D49739D00A49831 /* Abstractions */,
@@ -222,6 +228,14 @@
 				D647ACFB2D49745B00A49831 /* NetworkErrors.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		D647AD052D497FCB00A49831 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				D647AD062D497FDF00A49831 /* ImageStore.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,12 +344,14 @@
 				D647AD022D49769B00A49831 /* ApiRequests.swift in Sources */,
 				D647AD042D49798500A49831 /* ExploreService.swift in Sources */,
 				D647ACDE2D487FC900A49831 /* PromotionCardViewController.swift in Sources */,
+				D647AD072D497FE500A49831 /* ImageStore.swift in Sources */,
 				D647ACE12D48814E00A49831 /* ViewCode.swift in Sources */,
 				D647ACF12D488C2A00A49831 /* PromotionCardFactory.swift in Sources */,
 				3E727F03267281F7006C11AC /* ANFExploreCardTableViewController.swift in Sources */,
 				3E727ED326727088006C11AC /* AppDelegate.swift in Sources */,
 				D647ACED2D488B2700A49831 /* PromotionCardViewModel.swift in Sources */,
 				3E727ED526727088006C11AC /* SceneDelegate.swift in Sources */,
+				D647AD092D4984E400A49831 /* PromotionCardService.swift in Sources */,
 				D647ACFA2D4973DF00A49831 /* APIRequesting.swift in Sources */,
 				D647ACFC2D49746100A49831 /* NetworkErrors.swift in Sources */,
 				D647ACF32D4891EC00A49831 /* ExploreFactory.swift in Sources */,
