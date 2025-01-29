@@ -31,6 +31,8 @@
 		D647AD042D49798500A49831 /* ExploreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD032D49797F00A49831 /* ExploreService.swift */; };
 		D647AD072D497FE500A49831 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD062D497FDF00A49831 /* ImageStore.swift */; };
 		D647AD092D4984E400A49831 /* PromotionCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD082D4984DC00A49831 /* PromotionCardService.swift */; };
+		D647AD0F2D49E51B00A49831 /* ExploreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD0E2D49E4F800A49831 /* ExploreViewModelTests.swift */; };
+		D647AD722D49E54900A49831 /* PromotionCardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647AD712D49E53C00A49831 /* PromotionCardViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		D647AD032D49797F00A49831 /* ExploreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreService.swift; sourceTree = "<group>"; };
 		D647AD062D497FDF00A49831 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		D647AD082D4984DC00A49831 /* PromotionCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCardService.swift; sourceTree = "<group>"; };
+		D647AD0E2D49E4F800A49831 /* ExploreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModelTests.swift; sourceTree = "<group>"; };
+		D647AD712D49E53C00A49831 /* PromotionCardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCardViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		3E727EE82672708B006C11AC /* ANF Code TestTests */ = {
 			isa = PBXGroup;
 			children = (
+				D647AD0B2D49E4D300A49831 /* Scenes */,
 				3E727EE92672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift */,
 				3E727EEB2672708B006C11AC /* Info.plist */,
 			);
@@ -244,6 +249,31 @@
 				3E727EDB2672708B006C11AC /* Assets.xcassets */,
 			);
 			path = UIResources;
+			sourceTree = "<group>";
+		};
+		D647AD0B2D49E4D300A49831 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D647AD0D2D49E4E300A49831 /* Explore */,
+				D647AD0C2D49E4D900A49831 /* PromotionCard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D647AD0C2D49E4D900A49831 /* PromotionCard */ = {
+			isa = PBXGroup;
+			children = (
+				D647AD712D49E53C00A49831 /* PromotionCardViewModelTests.swift */,
+			);
+			path = PromotionCard;
+			sourceTree = "<group>";
+		};
+		D647AD0D2D49E4E300A49831 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				D647AD0E2D49E4F800A49831 /* ExploreViewModelTests.swift */,
+			);
+			path = Explore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +403,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D647AD722D49E54900A49831 /* PromotionCardViewModelTests.swift in Sources */,
+				D647AD0F2D49E51B00A49831 /* ExploreViewModelTests.swift in Sources */,
 				3E727EEA2672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
