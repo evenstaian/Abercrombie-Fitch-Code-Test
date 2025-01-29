@@ -158,6 +158,7 @@ extension PromotionCardViewController {
     }
     
     func configure(with data: Explore) {
+        viewModel.configure(with: data)
         titleLabel.text = data.title
         topDescriptionLabel.text = data.topDescription
         promoMessageLabel.text = data.promoMessage
@@ -196,6 +197,10 @@ extension PromotionCardViewController {
     }
     
     @objc private func buttonTapped(_ sender: UIButton) {
-        // TODO
+        guard let content = viewModel.getContent(at: sender.tag),
+              let url = URL(string: content.target) else { return }
+        
+        let webViewController = CustomWebviewFactory.makeModule(urlString: content.target)
+        navigationController?.pushViewController(webViewController, animated: true)
     }
 }

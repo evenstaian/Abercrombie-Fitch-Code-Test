@@ -43,6 +43,60 @@ class PromotionCardViewModelTests: XCTestCase {
         XCTAssertTrue(mockService.getImageCalled)
         XCTAssertEqual(mockService.mockImageURL, imageURL)
     }
+    
+    func testConfigureAndGetContent() {
+        // Given
+        let mockContent = Content(
+            elementType: "hyperlink",
+            target: "https://www.abercrombie.com/shop/us/mens-new-arrivals",
+            title: "Shop Men"
+        )
+        let mockExplore = Explore(
+            title: "TOPS STARTING AT $12",
+            backgroundImage: "anf-20160527-app-m-shirts.jpg",
+            content: [mockContent],
+            promoMessage: "USE CODE: 12345",
+            topDescription: "A&F ESSENTIALS",
+            bottomDescription: "*In stores & online. Exclusions apply."
+        )
+        
+        // When
+        sut.configure(with: mockExplore)
+        let retrievedContent = sut.getContent(at: 0)
+        
+        // Then
+        XCTAssertNotNil(retrievedContent)
+        XCTAssertEqual(retrievedContent?.elementType, "hyperlink")
+        XCTAssertEqual(retrievedContent?.target, "https://www.abercrombie.com/shop/us/mens-new-arrivals")
+        XCTAssertEqual(retrievedContent?.title, "Shop Men")
+    }
+    
+    func testGetContentWithInvalidIndex() {
+        // Given
+        let mockContent = Content(
+            elementType: "hyperlink",
+            target: "https://www.abercrombie.com/shop/us/mens-new-arrivals",
+            title: "Shop Men"
+        )
+        let mockExplore = Explore(
+            title: "TOPS STARTING AT $12",
+            backgroundImage: "anf-20160527-app-m-shirts.jpg",
+            content: [mockContent],
+            promoMessage: nil,
+            topDescription: nil,
+            bottomDescription: nil
+        )
+        sut.configure(with: mockExplore)
+        
+        // When & Then
+        XCTAssertNil(sut.getContent(at: -1), "Should return nil for negative index")
+        XCTAssertNil(sut.getContent(at: 1), "Should return nil for out of bounds index")
+    }
+    
+    func testGetContentWithoutConfiguration() {
+        // When & Then
+        XCTAssertNil(sut.getContent(at: 0), "Should return nil when explore is not configured")
+    }
 }
 
 class MockPromotionCardService: PromotionCardServicing {
